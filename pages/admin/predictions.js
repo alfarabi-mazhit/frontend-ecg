@@ -13,6 +13,26 @@ import {
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Line } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  LineElement,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+
+ChartJS.register(
+  LineElement,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const PredictionsChart = ({ predictions }) => {
   const dates = predictions.map((pred) =>
@@ -40,7 +60,7 @@ const PredictionsChart = ({ predictions }) => {
   return (
     <Box sx={{ marginBottom: 4 }}>
       <Typography variant="h6">Predictions Over Time</Typography>
-      <Line data={chartData} />
+      <Line key={JSON.stringify(chartData)} data={chartData} />
     </Box>
   );
 };
@@ -109,7 +129,7 @@ const ManagePredictions = () => {
               <TableRow key={prediction.id}>
                 <TableCell>
                   <img
-                    src={`http://localhost:8000${prediction.imageUrl}`}
+                    src={`http://localhost:8000/predictions/image/${prediction.imageUrl}`}
                     alt="ECG"
                     style={{ width: "100px" }}
                   />

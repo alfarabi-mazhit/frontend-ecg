@@ -32,6 +32,16 @@ const AdminPanel = () => {
             Manage Predictions
           </Button>
         </Grid>
+        <Grid item xs={12} md={6}>
+          <Button
+            variant="contained"
+            color="info"
+            fullWidth
+            onClick={() => router.push("/admin/mlmodels")}
+          >
+            Manage ML models
+          </Button>
+        </Grid>
       </Grid>
     </Box>
   );

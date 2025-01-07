@@ -1,11 +1,12 @@
 import "../styles/globals.css";
-import Layout from "../components/Layout";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Navbar from "../components/Navbar";
 
 export default function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
+    <>
+      <Navbar />
       <Component {...pageProps} />
       <ToastContainer
         position="top-right"
@@ -19,6 +20,6 @@ export default function MyApp({ Component, pageProps }) {
         pauseOnHover
         theme="colored"
       />
-    </Layout>
+    </>
   );
 }

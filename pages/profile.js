@@ -84,7 +84,7 @@ const Profile = () => {
                       Confidence: {prediction.prediction.confidence * 100}%
                     </Typography>
                     <img
-                      src={`http://localhost:8000${prediction.imageUrl}`}
+                      src={`http://localhost:8000/predictions/image/${prediction.imageUrl}`}
                       alt="ECG Prediction"
                       style={{ width: "100%", marginTop: 10 }}
                     />
