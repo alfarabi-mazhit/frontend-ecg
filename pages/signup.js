@@ -3,9 +3,12 @@ import { useForm } from "react-hook-form";
 import { TextField, Button, Typography, Box } from "@mui/material";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useRouter } from "next/router";
+
 
 const Signup = () => {
   const { register, handleSubmit } = useForm();
+  const router = useRouter();
 
   const onSubmit = async (data) => {
     try {
@@ -16,6 +19,7 @@ const Signup = () => {
       });
       toast.success("Signup successful!");
       console.log("Signup successful", response.data);
+      router.push("/login");
     } catch (error) {
       if (error.response && error.response.status === 400) {
         toast.error(error.response.data.detail || "Signup failed!");

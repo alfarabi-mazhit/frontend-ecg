@@ -1,4 +1,22 @@
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
+  background: linear-gradient(to bottom right, #eceff1, #cfd8dc);
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar in WebKit browsers */
+}
+
+button {
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+
+.island {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
 }
